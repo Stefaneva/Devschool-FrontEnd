@@ -1,0 +1,31 @@
+{
+  "name": "homework-functional-js",
+  "version": "1.0.0",
+  "description": "functional-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "gulp"
+  },
+  "author": "Eva Stefan",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "jsdom": "^13.0.0",
+    "mocha": "^5.2.0",
+    "mock-browser": "^0.92.14",
+    "run-sequence": "^2.2.1",
+    "sinon": "^7.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
