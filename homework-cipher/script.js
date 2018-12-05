@@ -62,10 +62,10 @@ function dateFormat() {
                                     + currentDate.getHours() + ':'
                                     + currentDate.getMinutes() + ':'
                                     + currentDate.getSeconds() + ' ';
-    if (currentDate.getHours >= 12)
-        currentDateFormatted += 'AM';
-    else
+    if (currentDate.getHours() >= 12)
         currentDateFormatted += 'PM';
+    else
+        currentDateFormatted += 'AM';
     return currentDateFormatted;
 }
 
@@ -83,10 +83,11 @@ function decodeElement(element) {
 
 (async () => {
     var cipher = new Cipher(20);
-    var message = "asD";
+    var message = 'asD';
     message = await cipher.encode(message);
-    var message = await cipher.decode(message);
+    message = await cipher.decode(message);
     cipher = new Cipher(30);
+    message = 'Devschool';
     message = await cipher.encode(message);
     message = await cipher.decode(message);
     cipher.readLog();
