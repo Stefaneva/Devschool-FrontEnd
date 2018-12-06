@@ -40,7 +40,7 @@ class Cipher{
         else {
             var stringArray = message.split('|');
             stringArray.forEach(element => {
-                decodedMessage += decodeElement(element);
+                decodedMessage += decodeElement(element, this.key);
             });
         }
         await timeout(message.length * 100);
@@ -77,8 +77,8 @@ function checkString(message) {
     return true;
 }
 
-function decodeElement(element) {
-    return String.fromCharCode(element/cipher.key);
+function decodeElement(element, cipherKey) {
+    return String.fromCharCode(element/cipherKey);
 }
 
 (async () => {
@@ -89,6 +89,7 @@ function decodeElement(element) {
     cipher = new Cipher(30);
     message = 'Devschool';
     message = await cipher.encode(message);
+    // message = '2040|3030|3540|3450|2970|3120|3330|3330|3240'; === 'Devschool'
     message = await cipher.decode(message);
     cipher.readLog();
 })();
